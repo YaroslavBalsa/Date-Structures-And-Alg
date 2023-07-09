@@ -1,9 +1,9 @@
-package chSecond.listing3;
+package chSecond.listing4;
 
-public class HighArrayApp {
+public class OrderedApp {
     public static void main(String[] args) {
         int maxSize = 100;
-        HighArray arr = new HighArray(maxSize);
+        OrdArray arr = new OrdArray(maxSize);
 
         arr.insert(77);
         arr.insert(99);
@@ -16,16 +16,14 @@ public class HighArrayApp {
         arr.insert(66);
         arr.insert(33);
 
-        arr.display();
-        System.out.println("");
-
-        int searchKey = 88;
-        if(arr.find(searchKey)){
-            System.out.print("Found " + searchKey);
+        int searchKey = 55;
+        if(arr.find(searchKey) != arr.size()){
+            System.out.println("Found " + searchKey);
         } else {
-            System.out.print("Can`t find " + searchKey);
+            System.out.println("Can`t find " + searchKey);
         }
-        System.out.println("");
+
+        arr.display();
 
         arr.delete(00);
         arr.delete(55);
