@@ -48,9 +48,10 @@ public class HighArray {
         }
         System.out.println("");
     }
-    public void getMax(){
+    public boolean removeMax(){
         int max = 0;
-        for(int i = 0; i <= nElems; i++){
+        int i;
+        for(i = 0; i <= nElems; i++){
             if(a[i] > max){
                max = (int) a[i];
             } else if (nElems == 0) {
@@ -58,5 +59,20 @@ public class HighArray {
             }
         }
         System.out.println("Max: " + max);
+
+        for(i = 0; i < nElems; i++){
+            if(a[i] == max){
+                break;
+            }
+        }
+        if(i == nElems){
+            return false;
+        } else {
+            for(int k = i; k < nElems; k++){
+                a[k] = a[k + 1];
+            }
+            nElems--;
+            return true;
+        }
     }
 }
