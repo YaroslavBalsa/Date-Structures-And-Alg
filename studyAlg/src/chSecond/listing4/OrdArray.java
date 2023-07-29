@@ -1,5 +1,7 @@
 package chSecond.listing4;
 
+import java.lang.reflect.Array;
+
 public class OrdArray {
     private long[] a;
     private int nElems;
@@ -11,19 +13,19 @@ public class OrdArray {
     public int size(){
         return nElems;
     }
-    public int find(long searchKey){
+    public int binarySearch(long value){
         int lowerB = 0;
         int upperB = nElems - 1;
         int curln;
 
         while (true){
             curln = (lowerB + upperB) / 2;
-            if(a[curln] == searchKey){
+            if(a[curln] == value){
                 return curln;
             } else if (lowerB > upperB){
                 return nElems;
             } else {
-                if(a[curln] < searchKey){
+                if(a[curln] < value){
                     lowerB = curln + 1;
                 } else {
                     upperB = curln - 1;
@@ -31,21 +33,46 @@ public class OrdArray {
             }
         }
     }
+    public int find(long searchKey){
+        return binarySearch(searchKey);
+    }
     public void insert(long value){
-        int i;
-        for( i = 0; i < nElems; i++){
-            if(a[i] > value){
+        int lowerB = 0;
+        int upperB = nElems - 1;
+        int curln;
+
+        while(true) {
+
+            curln = (lowerB + upperB) / 2;
+            if (a[curln] == value) {
                 break;
+            } else if (lowerB > upperB) {
+                if (a[curln] <= value) {
+                    if (a[curln] == 0 && nElems == 0){
+                        curln = 0;
+                    } else {
+                        curln++;
+                    }
+                }
+                break;
+            } else {
+                if (a[curln] > value){
+                    upperB = curln - 1;
+                } else {
+                    lowerB = curln + 1;
+                }
             }
         }
-        for (int k = nElems; k > i; k--){
-            a[k] = a[k - 1];
+
+        for (int k = nElems; k > curln; k-- ){
+            a[k] = a[k -1];
         }
-        a[i] = value;
+        a[curln] = value;
         nElems++;
     }
+
     public boolean delete(long value){
-        int i = find(value);
+        int i = binarySearch(value);
         if(i == nElems){
             return false;
         } else {
