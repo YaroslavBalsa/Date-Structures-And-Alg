@@ -1,31 +1,31 @@
-package chThird.listing3;
+package chThird.listing4;
 
-public class ArrayIns {
-    private long a[];
+public class ArrayInOb {
+    private Person a[];
     private int nElem;
 
-    public ArrayIns(int max) {
-        a = new long[max];
+    public ArrayInOb(int max) {
+        a = new Person[max];
         nElem = 0;
     }
-    public void insert(int value){
+    public void insert(Person value){
         a[nElem] = value;
         nElem++;
     }
     public void display(){
         for (int i = 0; i < nElem; i++){
-            System.out.print(a[i] + " ");
+            a[i].displayPerson();
         }
-        System.out.println("");
+        System.out.println();
     }
     public void insertionSort(){
         int out, in;
 
         for (out = 1; out < nElem; out++){
-            long temp = a[out];
+            Person temp = a[out];
             in = out;
 
-            while (in > 0 && a[in - 1] >= temp){
+            while (in > 0 && a[in - 1].getLastName().compareTo(temp.getLastName()) > 0){
                 a[in] = a[in - 1];
                 --in;
             }
