@@ -2,8 +2,7 @@ package chSecond.listing3;
 
 public class HighArrayApp {
     public static void main(String[] args) {
-        int maxSize = 100;
-        HighArray arr = new HighArray(maxSize);
+        HighArray arr = new HighArray(100);
 
         arr.insert(77);
         arr.insert(99);
@@ -26,8 +25,7 @@ public class HighArrayApp {
         }
         System.out.println("");
 
-        arr.removeMax();
-        arr.display();
+        arr.getMax();
 
         arr.delete(00);
         arr.delete(55);
@@ -38,5 +36,17 @@ public class HighArrayApp {
         arr.removeMax();
 
         arr.display();
+
+        arrSort(arr);
+    }
+    private static long[] arrSort (HighArray arr){
+
+        long[] arrSort = new long [arr.size()];
+
+        for (int i = arr.size(); i > 0; i--){
+           arrSort[i - 1] = arr.removeMax();
+        }
+        System.out.println("");
+        return arrSort;
     }
 }
