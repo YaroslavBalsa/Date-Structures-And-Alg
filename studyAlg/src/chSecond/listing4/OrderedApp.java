@@ -4,6 +4,7 @@ public class OrderedApp {
     public static void main(String[] args) {
         int maxSize = 100;
         OrdArray arr = new OrdArray(maxSize);
+        long[] temp = new long[]{122, 55, 66, 33, 155, 199};
 
         arr.insert(77);
         arr.insert(99);
@@ -28,6 +29,10 @@ public class OrderedApp {
         arr.delete(00);
         arr.delete(55);
         arr.delete(99);
+
+        arr.display();
+
+        arr.merge(temp);
 
         arr.display();
     }

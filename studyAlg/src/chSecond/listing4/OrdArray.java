@@ -89,4 +89,11 @@ public class OrdArray {
         }
         System.out.println();
     }
+    public void merge(long [] input){
+        for (long value : input){
+            if (find(value) == nElems){
+                insert(value);
+            }
+        }
+    }
 }
