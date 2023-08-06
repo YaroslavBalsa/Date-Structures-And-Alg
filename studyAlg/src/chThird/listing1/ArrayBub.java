@@ -35,4 +35,25 @@ public class ArrayBub {
             }
         }
     }
+    public void alternativesBubbleSort(){
+        int inner, rightOuter, leftOuter;
+
+        for (rightOuter = nElem - 1; rightOuter > 1; rightOuter--){
+            for (inner = 0; inner < rightOuter; inner++){
+                if (a[inner] > a[inner + 1]){
+                    long temp = a[inner];
+                    a[inner] = a[inner + 1];
+                    a[inner + 1] = temp;
+                }
+            }
+        } for (leftOuter = 0; leftOuter < nElem - 1; leftOuter++){
+            for (inner = nElem - 1; inner > leftOuter; inner--){
+                if (a[inner] < a[inner - 1]){
+                    long temp = a[inner];
+                    a[inner] = a[inner - 1];
+                    a[inner - 1] = temp;
+                }
+            }
+        }
+    }
 }

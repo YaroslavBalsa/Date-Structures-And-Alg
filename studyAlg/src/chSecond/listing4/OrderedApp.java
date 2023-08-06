@@ -16,6 +16,7 @@ public class OrderedApp {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
+        arr.insert(33);
 
         int searchKey = 55;
         if(arr.find(searchKey) != arr.size()){
@@ -26,6 +27,9 @@ public class OrderedApp {
 
         arr.display();
 
+        arr.noDups();
+        arr.display();
+
         arr.delete(00);
         arr.delete(55);
         arr.delete(99);
@@ -34,6 +38,9 @@ public class OrderedApp {
 
         arr.merge(temp);
 
+        arr.display();
+
+        arr.noDups();
         arr.display();
     }
 }

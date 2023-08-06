@@ -94,4 +94,19 @@ public class OrdArray {
             insert(value);
         }
     }
+    public void noDups(){
+        int counter = 0;
+
+        for (int i = 0; i < nElems; i++){
+            for (int j = 0; j < nElems; j++){
+                if (a[i] == a[j]) {
+                    counter++;
+                    if (counter > 1) {
+                        delete(a[i]);
+                        counter = 1;
+                    }
+                }
+            }
+        }
+    }
 }
