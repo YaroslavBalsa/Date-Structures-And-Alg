@@ -91,9 +91,7 @@ public class OrdArray {
     }
     public void merge(long [] input){
         for (long value : input){
-            if (find(value) == nElems){
-                insert(value);
-            }
+            insert(value);
         }
     }
 }

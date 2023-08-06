@@ -73,4 +73,13 @@ public class HighArray {
 
         return max;
     }
+    public void noDups(){
+        for (int i = 0; i < nElems; i++){
+            for (int j = 0; j < nElems; j++){
+                if (a[i] == a[j] && i != j) {
+                    delete(a[j]);
+                }
+            }
+        }
+    }
 }

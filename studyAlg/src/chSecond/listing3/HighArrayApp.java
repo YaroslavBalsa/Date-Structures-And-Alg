@@ -15,6 +15,14 @@ public class HighArrayApp {
         arr.insert(66);
         arr.insert(33);
 
+        arr.insert(77);
+        arr.insert(33);
+        arr.insert(66);
+        arr.insert(22);
+
+        arr.display();
+
+        arr.noDups();
         arr.display();
 
         int searchKey = 88;
