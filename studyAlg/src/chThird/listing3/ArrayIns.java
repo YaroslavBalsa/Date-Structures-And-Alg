@@ -32,11 +32,33 @@ public class ArrayIns {
             a[in] = temp;
         }
     }
-    public int getMedian(){
+    public void getMedian(){
         insertionSort();
 
         int median = nElem / 2;
         System.out.println(a[median]);
-        return (int) a[median];
+    }
+    public void noDups(){
+        insertionSort();
+
+        long temp[] = new long[nElem];
+        int i, j;
+
+        for (i = 0, j = 0; i < nElem; i++){
+
+            if (j != 0){
+                if (temp[j - 1] != a[i]){
+                    temp[j] = a[i];
+                    j++;
+                }
+            } else {
+                temp[i] = a[i];
+                j++;
+            }
+        }
+        a = temp;
+        nElem = j;
+
+        display();
     }
 }

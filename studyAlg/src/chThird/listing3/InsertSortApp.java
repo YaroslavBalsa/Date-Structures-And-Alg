@@ -14,12 +14,20 @@ public class InsertSortApp {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
+        arr.insert(33);
 
         arr.display();
 
         arr.insertionSort();
         arr.display();
 
+        arr.noDups();
+
+//        arr.insertionSort();
+//        arr.display();
+
         arr.getMedian();
+
+
     }
 }
