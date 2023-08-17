@@ -17,10 +17,11 @@ public class BubbleSortApp {
 
         arr.display();
 
-        arr.bubbleSort();
+        arr.oddEvenSort();
+//        arr.bubbleSort();
         arr.display();
 
-        arr.alternativesBubbleSort();
-        arr.display();
+//        arr.alternativesBubbleSort();
+//        arr.display();
     }
 }

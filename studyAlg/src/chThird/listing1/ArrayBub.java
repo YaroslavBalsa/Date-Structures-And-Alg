@@ -56,4 +56,15 @@ public class ArrayBub {
             }
         }
     }
+    public void oddEvenSort(){
+        for (int i = 0; i < nElem; i++){
+            for (int j = i % 2; j < nElem - 1; j += 2){
+                if (a[j] > a[j + 1]){
+                    long temp = a[j + 1];
+                    a[j + 1] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+    }
 }
