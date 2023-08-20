@@ -19,7 +19,7 @@ public class InsertSortApp {
         arr.display();
 
         arr.insertionSort();
-        arr.display();
+//        arr.display();
 
         arr.noDups();
 

@@ -20,17 +20,34 @@ public class ArrayIns {
     }
     public void insertionSort(){
         int out, in;
+        int counterC = 0;
+        int counterR = 0;
+        long time = System.nanoTime();
 
         for (out = 1; out < nElem; out++){
             long temp = a[out];
             in = out;
 
+
             while (in > 0 && a[in - 1] >= temp){
+                counterR++;
+
                 a[in] = a[in - 1];
                 --in;
+
+                if (in == 0){
+                    counterR++;
+                    break;
+                }
             }
             a[in] = temp;
+            counterC++;
+
+            time = System.nanoTime() - time;
         }
+        display();
+        System.out.println("Copy: " + counterC + " Permutations: " + counterR + " Time amount: " + time);
+        System.out.println();
     }
     public void getMedian(){
         insertionSort();
