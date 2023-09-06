@@ -49,11 +49,17 @@ public class ArrayIns {
         System.out.println("Copy: " + counterC + " Permutations: " + counterR + " Time amount: " + time);
         System.out.println();
     }
-    public void getMedian(){
-        insertionSort();
+    public long getMedian(){
 
-        int median = nElem / 2;
-        System.out.println(a[median]);
+         long median = 0;
+
+        if (a.length % 2 != 0){
+            median = a.length / 2;
+            return median;
+        } else {
+            median = (a[(a.length - 1) / 2] + a[(a.length / 2)]) / 2;
+            return median;
+        }
     }
     public void noDups(){
         insertionSort();

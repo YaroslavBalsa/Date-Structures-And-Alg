@@ -26,8 +26,6 @@ public class InsertSortApp {
 //        arr.insertionSort();
 //        arr.display();
 
-        arr.getMedian();
-
-
+        System.out.println(arr.getMedian());
     }
 }
