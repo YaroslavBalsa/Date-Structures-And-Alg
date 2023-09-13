@@ -1,19 +1,19 @@
 package chFourth.listing2;
 
 public class StackX {
-    private long [] stackArr;
+    private char[] stackArr;
     private int maxSize;
     private int top;
 
     public StackX(int s) {
         maxSize = s;
-        stackArr = new long[s];
+        stackArr = new char[s];
         top = -1;
     }
-    public void push(int value){
+    public void push(char value){
         stackArr[++top] = value;
     }
-    public long pop(){
+    public char pop(){
         return stackArr[top--];
     }
     public long peek(){

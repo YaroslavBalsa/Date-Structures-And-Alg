@@ -1,30 +1,26 @@
-package chFourth.listing2;
+package chFourth.listing3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ReverserApp {
+public class BracketsApp {
     public static void main(String[] args) throws IOException {
-        String input, output;
-
+        String input;
         while (true){
-            System.out.print("Enter a string: ");
+            System.out.println("Enter a string: ");
             System.out.flush();
-
             input = getString();
 
             if (input.equals("")){
                 break;
             }
 
-            Reverser reverser = new Reverser(input);
-            output = reverser.doRevers();
-
-            System.out.println("Reverser: " + output);
+            BracketChecker checker = new BracketChecker(input);
+            checker.check();
         }
     }
-    public static String getString () throws IOException {
+    public static String getString() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
         return s;
