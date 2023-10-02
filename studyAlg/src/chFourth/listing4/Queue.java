@@ -15,9 +15,9 @@ public class Queue {
         nElem = 0;
     }
     public void insert(long i) {
-        if (isFull()) {
-            throw new UnsupportedOperationException("Queue is full !");
-        }
+//        if (isFull()) {
+//            throw new UnsupportedOperationException("Queue is full !");
+//        }
 
         if (rear == size - 1) {
             rear = -1;
@@ -51,5 +51,17 @@ public class Queue {
     }
     public int getSize(){
         return nElem;
+    }
+    public void printQueue(){
+
+        if (isEmpty()){
+            throw new UnsupportedOperationException("Queue is empty !");
+        }
+
+        while (!isEmpty()){
+            long element = remove();
+            System.out.print(element + " ");
+        }
+        System.out.println("");
     }
 }
