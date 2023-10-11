@@ -80,15 +80,14 @@ public class Deque {
         return quantityElements == 0;
     }
     public void printDeque(){
-        if (isEmpty()){
+        if (!isEmpty()){
             throw new UnsupportedOperationException("The queue is empty !");
         }
 
-//        for (long e : arrayDeque){
-//            System.out.print(e + " ");
-//        }
-
-//        while (!isEmpty()){
+        for (long e : arrayDeque){
+            System.out.print(e + " ");
+        }
+//        while (isEmpty()){
 //            for (int i = 0; i < arrayDeque.length; i++){
 //                System.out.print(arrayDeque[i] + " ");
 //            }
