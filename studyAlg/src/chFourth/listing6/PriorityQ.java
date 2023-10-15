@@ -10,26 +10,52 @@ public class PriorityQ {
         priorityQArray = new long[maxSize];
         nElem = 0;
     }
+//    public void insert (long element){
+//
+//        int i;
+//
+//        if (nElem == 0){
+//            priorityQArray[nElem++] = element;
+//        } else {
+//            for (i = nElem - 1; i >= 0; i--){
+//                if (element > priorityQArray[i]){
+//                    priorityQArray[i + 1] = priorityQArray[i];
+//                } else {
+//                    break;
+//                }
+//            }
+//            priorityQArray[i + 1] = element;
+//            nElem++;
+//        }
+//    }
+
+//    public long remove (){
+//        return priorityQArray[--nElem];
+//    }
     public void insert (long element){
+        priorityQArray[nElem] = element;
+
+        nElem++;
+    }
+    public long priorityRemove (){
 
         int i;
+        long element = priorityQArray[nElem - 1] ;
 
-        if (nElem == 0){
-            priorityQArray[nElem++] = element;
+
+        if (isEmpty()){
+            throw new UnsupportedOperationException("Queue is already empty ! ");
         } else {
-            for (i = nElem - 1; i >= 0; i--){
+            for (i = 0; i < nElem - 1; i++){
                 if (element > priorityQArray[i]){
-                    priorityQArray[i + 1] = priorityQArray[i];
-                } else {
-                    break;
+                    long temp = element;
+                    element = priorityQArray[i];
+                    priorityQArray[i] = temp;
                 }
             }
-            priorityQArray[i + 1] = element;
-            nElem++;
+            nElem--;
         }
-    }
-    public long remove (){
-        return priorityQArray[--nElem];
+        return element;
     }
     public long peekMIn (){
         return priorityQArray[nElem - 1];

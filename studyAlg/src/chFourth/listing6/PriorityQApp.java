@@ -11,7 +11,7 @@ public class PriorityQApp {
         queue.insert(20);
 
         while (!queue.isEmpty()){
-            long element = queue.remove();
+            long element = queue.priorityRemove();
             System.out.println(element + " ");
         }
         System.out.println("");
