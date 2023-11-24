@@ -8,6 +8,10 @@ public class Queue {
         private int nElem;
 
     public Queue() {
+        queArr = new Object[size];
+        front = 0;
+        rear = -1;
+        nElem = 0;
     }
 
     public Queue(int size) {
