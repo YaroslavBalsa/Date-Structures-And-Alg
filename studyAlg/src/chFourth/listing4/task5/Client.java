@@ -27,12 +27,6 @@ public class Client {
         }
     }
     private String getRandomName(){
-//
-//        byte[] array = new byte[7];
-//        new Random().nextBytes(array);
-//
-//        String generationString = new String(array, Charset.forName("UTF-8"));
-//
 
         int leftLimit = 97; // "a"
         int rightLimit = 122; //"z"
@@ -47,13 +41,7 @@ public class Client {
         return generationString;
     }
     private int getRandom() {
-        return (int) (Math.random() * 35);
-    }
-    public void unloadCart() {
-        for (int element = getQuantityGroceries() - 1; element > 0; element--){
-            System.out.print(pushcart[element] + " ");
-        }
-        System.out.println("");
+        return (int) (Math.random() * 15);
     }
     public String getClientID() {
         return clientID;
