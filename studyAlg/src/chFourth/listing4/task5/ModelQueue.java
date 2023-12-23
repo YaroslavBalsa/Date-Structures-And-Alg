@@ -22,6 +22,7 @@ public class ModelQueue {
         this.input = input;
 
         Client client = new Client();
+
         tHandling.setClientId(client.getClientID());
         time = client.getQuantityGroceries() * 1000;
 
@@ -41,7 +42,7 @@ public class ModelQueue {
             tHandling.setUnload(queue1.remove());
 
             System.out.println("Клиент " + client.getClientID() +
-                    "на кассе №1. Продуктов " + client.getQuantityGroceries());
+                    " на кассе №1. Продуктов " + client.getQuantityGroceries());
 
         }
         timer.schedule(tHandling, time);

@@ -8,19 +8,15 @@ import java.util.Random;
 public class Client {
     private String clientID;
     private int quantityGroceries;
+    final int min = 1;
+    final int max = 10;
     private int [] pushcart;
     int count = 0;
 
     public Client() {
 
         clientID = getRandomName();
-
-        if (getRandom() == 0){
-            quantityGroceries = 1;
-        } else {
-            quantityGroceries = getRandom();
-        }
-
+        quantityGroceries = getRandom(min, max);
         pushcart = new int[quantityGroceries];
         for (int i = 0; i < quantityGroceries; i++){
             pushcart[i] = count + i;
@@ -30,7 +26,7 @@ public class Client {
 
         int leftLimit = 97; // "a"
         int rightLimit = 122; //"z"
-        int targetStringLength = 7;
+        int targetStringLength = 5;
         Random random = new Random();
 
         String generationString = random.ints(leftLimit, rightLimit + 1)
@@ -40,8 +36,9 @@ public class Client {
 
         return generationString;
     }
-    private int getRandom() {
-        return (int) (Math.random() * 15);
+    private static int getRandom(int min, int max) {
+        max -= min;
+        return (int) (Math.random() * ++max) + min;
     }
     public String getClientID() {
         return clientID;
