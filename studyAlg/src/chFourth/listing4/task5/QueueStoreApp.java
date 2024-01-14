@@ -22,8 +22,7 @@ public class QueueStoreApp {
             if (input.equals("Q") || input.equals("q")){
                 break;
             }
-
-            modelQueue.addClientToQueue(input);
+            modelQueue.doThread(input);
         }
     }
     public static String getString() throws IOException {

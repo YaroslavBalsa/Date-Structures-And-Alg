@@ -3,28 +3,39 @@ package chFourth.listing4.task5;
 import chFourth.listing4.Queue;
 
 import java.util.Timer;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class ModelQueue {
     private String input;
-    private String clientId;
-    private int time;
     Queue queue1 = new Queue(10);
     Queue queue2 = new Queue(10);
     Timer timer = new Timer(true);
 
     public ModelQueue() {
     }
+    public void doThread(String input) {
+        Lock lock = new ReentrantLock();
+        Condition doNext = lock.newCondition();
+        this.input = input;
 
-    public void addClientToQueue(String input) {
+        lock.lock();
+        try {
+            addClientToQueue();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void addClientToQueue() {
 
         TimerHandling tHandling = new TimerHandling();
-
-        this.input = input;
 
         Client client = new Client();
 
         tHandling.setClientId(client.getClientID());
-        time = client.getQuantityGroceries() * 1000;
+        int time = client.getQuantityGroceries() * 1000;
 
         tHandling.setTime(time);
 
@@ -43,10 +54,8 @@ public class ModelQueue {
 
             System.out.println("Клиент " + client.getClientID() +
                     " на кассе №1. Продуктов " + client.getQuantityGroceries());
-
         }
         timer.schedule(tHandling, time);
     }
-
 }
 

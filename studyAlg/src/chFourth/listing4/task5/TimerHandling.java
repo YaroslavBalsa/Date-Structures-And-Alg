@@ -18,10 +18,10 @@ public class TimerHandling extends TimerTask {
             Toolkit.getDefaultToolkit().beep();
             System.out.println("Клиент " + getClientId() + " выгружен");
 
-            Thread.sleep(getTime());
+            Thread.currentThread().join(getTime());
 
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
         }
     }
 
