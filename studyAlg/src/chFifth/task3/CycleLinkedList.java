@@ -1,15 +1,13 @@
 package chFifth.task3;
 
-import chFifth.task4.Person;
-
 public class CycleLinkedList<T> {
-    Node <T> current;
-    Node <T> head;
-    private int amount = 0;
+    Node<T> current;
+    Node<T> head;
+    private int amount;
 
     public static class Node<T> {
-        private T data;
-        Node next;
+        private final T data;
+        Node<T> next;
 
         public Node(T data) {
             this.data = data;
@@ -19,18 +17,17 @@ public class CycleLinkedList<T> {
             return data;
         }
         public void printNode() {
-            System.out.println(data.toString() + " ");
+            System.out.println(data.toString());
         }
     }
 
-
     public CycleLinkedList() {
+        this.amount = 0;
     }
 
-    public void insert(Person person) {
-//        Person person = new Person(st, i);
+    public void insert(T data) {
 
-        Node newNode = new Node<Person> (person);
+        Node<T> newNode = new Node<>(data);
 
         if (isEmpty()) {
             current = newNode;
@@ -42,14 +39,19 @@ public class CycleLinkedList<T> {
         }
         amount++;
     }
-    public Node step() {
+    public T remove() {
+        Node <T> temp = current;
+        step();
+        return temp.getData();
+    }
+
+    public Node<T> step() {
         if (current != null) {
             return (current = current.next);
         } else {
             return null;
         }
     }
-
     public boolean isEmpty() {
         return (current == null);
     }
@@ -61,8 +63,9 @@ public class CycleLinkedList<T> {
     public void printList() {
         for (int i = amount; i > 0; i--){
             current.printNode();
-            current = current.next;
+            step();
         }
+        System.out.println("");
     }
 }
 

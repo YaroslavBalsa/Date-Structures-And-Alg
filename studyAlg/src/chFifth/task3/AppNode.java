@@ -6,12 +6,19 @@ public class AppNode {
     public static void main(String[] args) {
         CycleLinkedList<Person> list = new CycleLinkedList<>();
 
-        list.insert(new Person("Mike", 29));
-        list.insert(new Person("Jonny", 45));
-        list.insert(new Person("Lenny", 30));
-        list.insert(new Person("Bobby", 32));
-        list.insert(new Person("Toby", 61));
+        Stack<Person> stack = new Stack<>(list);
 
-        list.printList();
+        stack.push(new Person(11,"Jonny", 45));
+        stack.push(new Person(55,"Mike", 29));
+        stack.push(new Person(33,"Bobby", 32));
+        stack.push(new Person(22,"Lenny", 30));
+        stack.push(new Person(44,"Toby", 61));
+
+        stack.printStack();
+
+        stack.pop();
+        stack.pop();
+
+        stack.printStack();
     }
 }

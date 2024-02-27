@@ -1,15 +1,25 @@
 package chFifth.task4;
 
 public class Person {
+    private int id;
     private String name;
     private int age;
 
     public Person() {
     }
 
-    public Person(String name, int age) {
+    public Person(int id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -30,7 +40,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{ " +
+        return "Person has id = " + id + "{ " +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
