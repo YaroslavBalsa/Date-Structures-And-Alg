@@ -41,7 +41,17 @@ public class CycleLinkedList<T> {
     }
     public T remove() {
         Node <T> temp = current;
-        step();
+
+        if (amount == 1) {
+            step();
+            current = null;
+            head = null;
+        } else {
+            step();
+            head.next = current;
+        }
+        amount--;
+
         return temp.getData();
     }
 
