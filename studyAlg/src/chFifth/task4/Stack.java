@@ -1,5 +1,6 @@
-package chFifth.task3;
+package chFifth.task4;
 
+import chFifth.task3.CycleLinkedList;
 import chFifth.task4.Person;
 
 public class Stack<T> {
@@ -16,7 +17,7 @@ public class Stack<T> {
         return stack.remove();
     }
     public T peek() {
-        return stack.current.getData();
+        return stack.getCurrent().getData();
     }
     public void printStack() {
         stack.printList();
