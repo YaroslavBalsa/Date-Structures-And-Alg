@@ -78,8 +78,8 @@ public class CycleLinkedList<T> {
         System.out.println("");
     }
 
-    public Node<T> getCurrent() {
-        return current;
+    public T getCurrent() {
+        return current.getData();
     }
 }
 

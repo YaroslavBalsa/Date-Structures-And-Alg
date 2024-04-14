@@ -17,7 +17,7 @@ public class Stack<T> {
         return stack.remove();
     }
     public T peek() {
-        return stack.getCurrent().getData();
+        return stack.getCurrent();
     }
     public void printStack() {
         stack.printList();
